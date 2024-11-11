@@ -17,7 +17,8 @@ rm -rf ~/.config/nvim && mkdir -p ~/.config/nvim && curl -L https://github.com/t
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 ## Далее все должно заработать =)
-Если нет, правим ручками конфиги, например тут **~/.config/nvim/lua/plugins.lua** 
 ```
 :PackerSync --Обновление плагинов
 ```
+Если некоторые обновления идут с ошибками, то правим ручками конфиги, например тут **~/.config/nvim/lua/plugins.lua** 
+
