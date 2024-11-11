@@ -1,6 +1,6 @@
 # Neovim Config
 
-Мой онфиг для Neovim
+Мой конфиг для Neovim
 
 ## Установка
 
