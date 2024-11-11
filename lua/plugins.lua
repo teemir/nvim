@@ -17,7 +17,7 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}}
 
   use {'akinsho/bufferline.nvim',                       -- tabs
-    tag = "v3.*",                                       -- prefer ver.
+    tag = "v4.*",                                       -- prefer ver.
     requires = 'nvim-tree/nvim-web-devicons'}           -- icons
 
   use {'nvim-telescope/telescope.nvim',                 -- file finder

@@ -114,32 +114,35 @@ require('lualine').setup {
 }
 
 -- Настройки Bufferline
-local status_ok, bufferline = pcall(require, "bufferline")
-if not status_ok then
-  return
-end
-
-bufferline.setup({
+require("bufferline").setup({
   options = {
-    numbers = "none",
+    mode = "buffers",                    -- режим отображения
+    numbers = "none",                    -- убрать нумерацию
+    close_command = "bdelete! %d",       -- команда закрытия буфера
     indicator = {
-      icon = '▎',
-      style = 'icon',
+      style = 'icon',                    -- стиль индикатора
     },
-    diagnostics = "nvim_lsp",
+    buffer_close_icon = '×',             -- иконка закрытия буфера
+    modified_icon = '●',                 -- иконка измененного буфера
+    close_icon = '',                   -- иконка закрытия
+    left_trunc_marker = '',            -- маркер обрезки слева
+    right_trunc_marker = '',           -- маркер обрезки справа
+    diagnostics = "nvim_lsp",            -- интеграция с LSP
     offsets = {{
       filetype = "NvimTree",
       text = "File Explorer",
       text_align = "left",
       separator = true
     }},
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    separator_style = "thin",
-    always_show_bufferline = true,
+    color_icons = true,                  -- цветные иконки
+    show_buffer_icons = true,            -- показывать иконки буферов
+    show_buffer_close_icons = true,      -- показывать иконки закрытия буфера
+    show_close_icon = true,              -- показывать иконку закрытия
+    show_tab_indicators = true,          -- показывать индикаторы вкладок
+    separator_style = "thin",            -- тонкий стиль разделителя
+    always_show_bufferline = true,       -- всегда показывать строку буферов
   }
 })
-
 -- Настройки Telescope (поиск файлов и текста)
 vim.keymap.set('n', 'ff', telescope.find_files, {})
 vim.keymap.set('n', 'fg', telescope.live_grep, {})
