@@ -18,10 +18,7 @@ opt.expandtab = true            -- конвертировать табуляци
 opt.autoindent = true           -- автоматический отступ новой строки
 opt.fileformat = 'unix'         -- формат файла UNIX
 opt.smartindent = true          -- умный отступ
-opt.tabstop = 2                 -- ширина табуляции
 opt.expandtab = true            -- преобразование табуляции в пробелы
-opt.shiftwidth = 2              -- ширина отступов
-
 opt.ignorecase = true           -- нечувствительность к регистру при поиске
 opt.showmatch = true            -- показать совпадение
 opt.hlsearch = true             -- выделение совпадений при поиске
@@ -116,33 +113,34 @@ require('lualine').setup {
 -- Настройки Bufferline
 require("bufferline").setup({
   options = {
-    mode = "buffers",                    -- режим отображения
-    numbers = "none",                    -- убрать нумерацию
-    close_command = "bdelete! %d",       -- команда закрытия буфера
+    mode = "buffers",
+    numbers = "none",
+    close_command = "bdelete! %d",
     indicator = {
-      style = 'icon',                    -- стиль индикатора
+      style = 'icon',
     },
-    buffer_close_icon = '×',             -- иконка закрытия буфера
-    modified_icon = '●',                 -- иконка измененного буфера
-    close_icon = '',                   -- иконка закрытия
-    left_trunc_marker = '',            -- маркер обрезки слева
-    right_trunc_marker = '',           -- маркер обрезки справа
-    diagnostics = "nvim_lsp",            -- интеграция с LSP
+    buffer_close_icon = '✖',
+    modified_icon = '●',
+    close_icon = '',
+    left_trunc_marker = '',
+    right_trunc_marker = '',
+    diagnostics = "nvim_lsp",
     offsets = {{
       filetype = "NvimTree",
       text = "File Explorer",
       text_align = "left",
       separator = true
     }},
-    color_icons = true,                  -- цветные иконки
-    show_buffer_icons = true,            -- показывать иконки буферов
-    show_buffer_close_icons = true,      -- показывать иконки закрытия буфера
-    show_close_icon = true,              -- показывать иконку закрытия
-    show_tab_indicators = true,          -- показывать индикаторы вкладок
-    separator_style = "thin",            -- тонкий стиль разделителя
-    always_show_bufferline = true,       -- всегда показывать строку буферов
+    color_icons = true,
+    show_buffer_icons = true,
+    show_buffer_close_icons = true,
+    show_close_icon = true,
+    show_tab_indicators = true,
+    separator_style = "thin",
+    always_show_bufferline = true,
   }
 })
+
 -- Настройки Telescope (поиск файлов и текста)
 vim.keymap.set('n', 'ff', telescope.find_files, {})
 vim.keymap.set('n', 'fg', telescope.live_grep, {})
