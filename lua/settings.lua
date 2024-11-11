@@ -82,6 +82,8 @@ require("gruvbox").setup({
   transparent_mode = false,
 })
 
+
+
 opt.termguicolors = true
 o.background = "dark"
 cmd[[colorscheme gruvbox]]
